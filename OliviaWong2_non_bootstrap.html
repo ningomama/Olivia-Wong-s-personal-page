@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Olivia Wong</title>
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+            <header>
+                            <div class="hidden-head hidden" id="profilepic">
+                                <a><img src="img/profilepic.jpg" alt="profile picture of Olivia Wong"></a>
+                                <h4>Hons.B.Sc. Environmental Sciences <br> University of Toronto</h4>
+                            </div>
+            </header>
+        </div>
+            <section class="leftbar">
+                <ul>
+                    <li>
+                        <div class="hidden-box hidden" id="dream">
+                            <p>&#10048</p>
+                            <h2>My Dream <br> is to code <br> with my son <br>one day</h2>
+                            <a class="upbtn" href="#intro">&#10506Top</a>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="hidden-box hidden" id="cana">   
+                            <p>&#10029</p>
+                            <h3> Co-Founder</h3> <h2>CANA Elite Education Centre</h2>
+                            <a class="upbtn" href="#intro">&#10506Top</a>
+                        </div> 
+                    </li>
+                    <li>
+                        <div class="hidden-box hidden" id="mominv">
+                            <img src="img/logo.png" alt="logo of Mothers of Inventions">
+                            <h3>Mothers of Inventions</h3>
+                            <a class="upbtn" href="#intro">&#10506Top</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="hidden-box hidden" id="initiative">
+                            <h3>
+                                <p>Low Carbon household</p>
+                                <p>Plasticless Shopping</p>
+                                <p>Upcycling</p>
+                            </h3>    
+                            <a class="upbtn" href="#intro">&#10506Top</a>
+                            
+                        </div>
+                    </li>
+                   
+                </ul>
+
+            </section>    
+
+            <div class="container" id="intro">
+                <h2>Hi!</h2>
+                <p>I'm  <a href="#profilepic" class="btn" id="profilepicbtn">Olivia Wong.</a><br> I'm a  <a href="#dream" class="btn" id="dreambtn"> Mom </a>  exploring Computer Programming.<br>
+                I've launch my  <a href="#cana" class="btn" id="canabtn">First Start-Up</a>  in Education in 2010.<br> My <a href="#mominv" class="btn" id="mominvbtn">Latest Project</a>  is to engage Communities for  <a href="#initiative" class="btn" id="initiativebtn">Environmentally-Friendly</a>  Lifestyles.</p>
+                <p>I love Exchanging Ideas!</p>
+                
+                
+                <footer class="footer-container">
+                    <div>
+                        <ul>
+                            <li><a target="_blank" href="https://www.facebook.com/MomInv.ly/" class="fa fa-facebook"></a></li> 
+                        
+                            <li><a target="_blank" href="mailto:oliwg138@outlook.com?subject=Ideas%20Sharing" id="email">&#9993;</a></li>
+                        
+                            <li><a target="_blank" href="http://www.linkedin.com/in/olivia-wong-46365912" class="fa fa-linkedin"></a></li>
+                        </ul>
+                    </div>                       
+                </footer>
+                
+                <div class="filler"></div>
+
+                <div id="album">
+                        <img class="slides" src="img/bigimg1.jpg">
+                        <img class="slides" src="img/bigimg3.jpg">
+                        <img class="slides" src="img/bigimg4.jpg">
+                        <img class="slides" src="img/bigimg5.jpg"> 
+                        <img class="slides" src="img/bigimg6.jpg">
+                        <img class="slides" src="img/bigimg7.jpg">
+                    <button id="prevbtn">&#10525</button>
+                    <button id="nextbtn">&#10526</button>             
+                </div> 
+            </div>
+<!--
+            <footer class="footer-container">
+                    <div>
+                        <ul>
+                            <li><a href="#" class="fa fa-facebook"></a></li> 
+                        
+                            <li><a href="#" id="email">&#9993;</a></li>
+                        
+                            <li><a href="#" class="fa fa-linkedin"></a></li>
+                        </ul>
+                    </div>                       
+            </footer>
+-->
+        </div>
+
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> 
+
+
+<script>
+
+
+//Make sure the page onload with the first photo
+let n=0;
+let index=0;
+window.addEventListener("load", getSlides(n));
+
+/*
+This function changes the index variable according to clicks
+on button
+*/
+document.getElementById("nextbtn").addEventListener("click",(n)=>{
+        index += 1;
+        getSlides(index); 
+    });
+document.getElementById("prevbtn").addEventListener("click",(n)=>{
+        index -= 1;
+        getSlides(index); 
+    });
+
+
+/*
+This function initialize the first photo to be shown
+in the album and hide the others
+*/
+function getSlides(n){
+    let i;
+//turning the img into an array//
+    let imgArray = document.getElementsByClassName("slides");
+
+//loop through all the images and hide them//
+    for(i=0; i<imgArray.length; i++){
+        imgArray[i].style.display="none";
+    };
+
+//when it goes backward pass the first image, return last image//
+    if(n<0){
+        index = imgArray.length -1;
+        imgArray[index].style.display ="block";
+
+//When it goes forward to the last image, return to the first //
+    } else if (n>imgArray.length-1){
+        index=0;
+        imgArray[index].style.display ="block";
+
+//display the current one//
+    } else     {
+    imgArray[index].style.display ="block";
+    };
+};
+</script>
+
+<script>
+//btn click to show div with id profile pic
+
+
+$("#canabtn").click(function(){
+    $("#cana").toggleClass("hidden");
+    });
+
+$("#profilepicbtn").click(function(){   
+    $("#profilepic").toggleClass("hidden")
+    });
+
+$("#initiativebtn").click(function(){
+    $("#initiative").toggleClass("hidden");
+    });
+    
+$("#mominvbtn").click(function(){
+    $("#mominv").toggleClass("hidden");
+    });
+    
+$("#dreambtn").click(function(){
+    $("#dream").toggleClass("hidden");
+    });
+
+/*
+$("#contactbtn").click(function(){
+    $("#contact").toggleClass("hidden");
+    });
+*/
+</script>
+
+
+
+
+</body>
+</html>
